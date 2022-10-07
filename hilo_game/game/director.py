@@ -17,9 +17,6 @@ class Director:
         """
         self.points=300
         self.play_again="y"
-        card= Card()
-        self.current_card= card.display
-        self.guess_card= card.display
 
     def start_game(self):
         """Starts the game by calling the main loop and the individal methods in the Director class
@@ -37,6 +34,10 @@ class Director:
 
         Arg: self(Director): An instance of Director"""
 
+        card= Card()
+        card2= Card()
+        self.current_card= card.value
+        self.guess_card= card2.value
         print(f"The card is: {self.current_card}")
         self.guess = input("Higher or lower (h/l): ").lower()
         
