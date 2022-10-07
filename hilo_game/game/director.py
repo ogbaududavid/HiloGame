@@ -17,8 +17,9 @@ class Director:
         """
         self.points=300
         self.play_again="y"
-        self.current_card= Card().display
-        self.guess_card= Card().display
+        card= Card()
+        self.current_card= card.display
+        self.guess_card= card.display
 
     def start_game(self):
         """Starts the game by calling the main loop and the individal methods in the Director class
