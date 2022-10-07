@@ -1,4 +1,5 @@
 import random
+from game.card import Card
 
 class Director:
     """A person who directs the game
@@ -16,8 +17,8 @@ class Director:
         """
         self.points=300
         self.play_again="y"
-        self.current_card= 0
-        self.guess_card=0
+        self.current_card= Card().display
+        self.guess_card= Card().display
 
     def start_game(self):
         """Starts the game by calling the main loop and the individal methods in the Director class
