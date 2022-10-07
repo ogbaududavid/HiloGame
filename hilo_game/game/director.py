@@ -25,7 +25,7 @@ class Director:
 
         while self.play_again.lower() == "y" and self.points >0:
             self.get_input()
-            self.get_points()
+            self.calculate_points()
             self.show_result()
 
     def get_input(self):
@@ -42,7 +42,7 @@ class Director:
         self.guess = input("Higher or lower (h/l): ").lower()
         
     
-    def get_points(self):
+    def calculate_points(self):
         """Determine if the user guessed correctly or not. If the users guess was correct add +100 to the score
         else remove -70 from the score.
         Ask the user if they will like to play again.
