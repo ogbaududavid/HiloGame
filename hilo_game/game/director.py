@@ -5,9 +5,9 @@ class Director:
     """A person who directs the game
     The responsibility of the Director is to control the actions of the game
     Attributes: 
-        points: The starting points of a player at the biginning of the game, the points 
+        points (int): The starting points of a player at the biginning of the game, the points 
         increases or decreases as the play guesses correctly or incorrectly the next card
-        play_again: A string that holds the default value of "y" and can be updated by the 
+        play_again (boolean): A string that holds the default value of "y" and can be updated by the 
         user if they will like to continue playing the game."""
     def __init__(self):
         """Constructs a new Director.
@@ -16,14 +16,14 @@ class Director:
             self (Director): an instance of Director.
         """
         self.points=300
-        self.play_again="y"
+        self.play_again= True
 
     def start_game(self):
         """Starts the game by calling the main loop and the individal methods in the Director class
 
         Args: self(Director): An instance of Director """
 
-        while self.play_again.lower() == "y" and self.points >0:
+        while self.play_again == True and self.points >0:
             self.get_input()
             self.calculate_points()
             self.show_result()
@@ -56,7 +56,7 @@ class Director:
             self.points += 100
         elif self.points == 0:
             print("Game over! You do not have enough points to play again.")
-        elif self.play_again=="n":
+        elif self.play_again== "n":
             print("Game over!")
         else:
             self.points-= 70
@@ -68,10 +68,13 @@ class Director:
 
         print(f"The card was: {self.guess_card}")
         print(f"yourscore is: {self.points} points")
-        self.play_again=input("Play again {y/n): ").lower()
+        play_question=input("Play again (y/n): ").lower()
+        self.play_again = (play_question == "y")
         if self.points <= 0:
             print("Game Over! You do not have enough points to play again")
-        elif self.play_again=="n":
+        elif play_question == "n":
              print("Game Over!")
+        elif play_question != "n":
+            print("Invalid input! Game Over.")
         print()
 
