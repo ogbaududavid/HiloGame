@@ -38,4 +38,9 @@ root                    (project root folder)
 ## Authors
 ---
 * Ogbaudu David (ogb18001@byui.edu)
-*
+* Karabo Mamabolo
+* Agatha
+* Henry Coupe
+* Makhehla Mkhize
+* zit22001
+ 
